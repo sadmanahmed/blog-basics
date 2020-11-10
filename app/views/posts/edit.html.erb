@@ -1,0 +1,20 @@
+<%= form_with model: @post ,local: true do |f| %>
+<% f.object.errors.to_a.each do |msg|%>
+    <p style="color: red"><%= msg %></p>
+  <% end %>
+  <div>
+    <%= f.label 'Title' %>
+  <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label 'Body' %>
+  <%= f.text_area :body %>
+  </div>
+
+  <div>
+    <%= f.submit 'Save' %>
+  </div>
+
+
+<% end %>
